@@ -1,0 +1,125 @@
+/* Basic CSS Selectors */
+
+/*font imports using downloaded fonts*/
+@font-face {
+    font-family: 'gwyner';
+    src: url('./assets/fonts/gwyner-condensed-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fiorina';
+    src: url('./assets/fonts/Mint Type - FiorinaSubhead-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Element Selector - targets all <body> elements */
+body {
+    font-family: 'fiorina', sans-serif; /* Default font for the body */
+    background-color: #f4f4f4; /* Light background color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Profile Section Styling */
+.profile-section {
+    background-color: white; /* White background for profile sections */
+    padding: 20px; /* Internal spacing */
+    margin: 20px auto; /* Center the section with margin */
+    border-radius: 5px; /* Rounded corners for aesthetics */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Maximum width for the profile section */
+}
+
+/* Headings in Profile Section */
+.profile-section h1 {
+    font-size: 2.5rem; /* Font size for main heading */
+    color: #333; /* Dark color for text */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.profile-section h2 {
+    font-size: 2rem; /* Font size for subheadings */
+    color: #555; /* Slightly lighter color for subheadings */
+    margin-top: 20px; /* Space above the subheading */
+    position: relative; /* Required for the underline effect */
+}
+
+/* Underline effect for h2 on hover */
+.profile-section h2:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+/* Pseudo-element for underline */
+.profile-section h2::after {
+    content: ''; /* Creates an empty pseudo-element */
+    position: absolute; /* Position relative to the h2 */
+    left: 0; /* Aligns to the left */
+    bottom: -5px; /* Position below the text */
+    width: 100%; /* Full width of the heading */
+    height: 2px; /* Thickness of the underline */
+    background-color: #007BFF; /* Color of the underline */
+    transform: scaleX(0); /* Initially hidden (0 width) */
+    transform-origin: left; /* Grows from the left */
+    transition: transform 0.3s ease; /* Smooth transition for the underline */
+}
+
+/* Combine selectors - apply styles when hovering link */
+.profile-section h2:hover::after {
+    transform: scaleX(1); /* Expands to full width on hover */
+}
+
+/* Paragraph Styling */
+.profile-section p {
+    line-height: 1.6; /* Line height for better readability */
+    color: #666; /* Gray color for text */
+}
+
+/* Image Styling */
+.profile-section img {
+    border-radius: 50%; /* Circular profile image */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+/* Table Styling */
+.profile-section table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse; /* Remove space between table cells */
+    margin-top: 20px; /* Space above the table */
+}
+
+.profile-section th, .profile-section td {
+    border: 1px solid #ddd; /* Light gray border for table cells */
+    padding: 8px; /* Internal spacing for table cells */
+    text-align: left; /* Align text to the left */
+}
+
+.profile-section th {
+    background-color: #f2f2f2; /* Light gray background for header */
+}
+
+/* Gallery Styling */
+.gallery {
+    display: flex; /* Flexbox for image gallery */
+    justify-content: space-between; /* Space between images */
+    margin-top: 20px; /* Space above the gallery */
+}
+
+.gallery img {
+    width: 30%; /* Each image takes up 30% of the container */
+    border-radius: 5px; /* Rounded corners for images */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for gallery images */
+.gallery img:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+/* Video and Audio Section Styling */
+.profile-section video, .profile-section audio {
+    width: 100%; /* Full width for video and audio elements */
+    margin-top: 20px; /* Space above the media elements */
+}
+

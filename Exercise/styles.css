@@ -1,0 +1,316 @@
+/* Color Variables */
+:root {
+    --color-primary: #1B365D;    /* Deep twilight blue */
+    --color-secondary: #F28482;  /* Warm sunset pink */
+    --color-accent: #FFDD67;     /* Golden comet glow */
+    --color-background: #F7F3E3; /* Soft cloudy white */ 
+    --color-textw: #FFFFFF;       
+    --color-textb: #000000;
+    
+}
+
+@font-face {
+    font-family: 'gwyner';
+    src: url('./assets/fonts/gwyner-condensed-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* TASK: import a new font (feel free to use your own!) */
+
+
+/*Google API font import*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap');
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-background);
+    color: var(--color-textb);
+}
+
+/* Navigation */
+.navbar {
+    /* TASK: Add padding and positioning, define font size and/or weight */
+    background-color: transparent;  
+
+    
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Lexend Exa', sans-serif; 
+    
+
+}
+
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;  /* Take full width */
+    margin: 0 auto;
+    /* TASK: Add responsive padding */
+    
+}
+
+/* Style for the navigation items container */
+.navbar ul li:first-child {
+    margin-right: auto;
+    margin-left: clamp(1rem, 3vw, 3rem);
+}
+
+.navbar a {
+    color: var(--color-textw);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    position: relative;  /* Required for absolute positioning of pseudo-element */
+    transition: color 0.3s;
+}
+
+
+/* TASK: Add underline effect using ::after pseudo-element */
+.navbar a::after {
+    
+}
+
+/* TASK: Add underline effect using ::after pseudo-element */
+.navbar a:hover::after {
+    
+}
+
+/* TASK: Change text color on hover */
+/* Text color change and underline animation on hover */
+.navbar a:hover {
+
+}
+
+
+
+/* Don't apply hover effects to the logo */
+.navbar ul li:first-child a::after {
+    display: none;
+}
+
+/* Add these new styles for the logo */
+/* TASK: Add responsive logo size */
+.navbar img {
+    
+}
+
+/* Group the navigation links together */
+.navbar ul li:not(:first-child) {
+    margin-left: clamp(0.5rem, 2vw, 2rem);
+    margin-right: clamp(0.5rem, 2vw, 2rem);
+}
+
+/* Header */
+.site-header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    color: var(--color-background);
+    text-align: left;
+    font-family: 'gwyner';
+    font-size: 9rem;
+    font-weight: 500;
+    /* TASK: Add padding-bottom */
+}
+
+#headerL1 {
+    /* TASK: Add italic font style */
+}
+
+/* Move the background image to body */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/bgplaceholder.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.header-content {
+    position: relative;
+    padding: 0 2rem;
+    margin-left: 55%;
+    margin-bottom: 5vh;
+}
+
+.header-content h1 {
+    /* TASK: Add font size, alignment, and line height */
+
+}
+
+.header-content p {
+    /* TASK: Add font size and margin */
+
+}
+
+/* Add after the header styles and before the profile section */
+.content-container {
+    position: relative;
+    background-color: var(--color-background);
+    width: 80%;
+    min-height: 200vh;
+    margin: -15vh auto 0;
+    padding: 0rem;
+    transform-origin: bottom;
+    transition: transform 0.1s ease-out;
+}
+
+.content-container h2 {
+    font-family: 'fiorina';
+    font-size: 4rem;  /* Adjust size as needed */
+    font-weight: 500;  /* Gwyner might look better with normal weight */
+    color: var(--color-textb);
+    margin-bottom: 2rem;
+}
+
+/* Update specific h2 styles if needed */
+.featured-works h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Move these sections inside the container in the HTML */
+.profile,
+.featured-works {
+    background-color: transparent; /* Remove their individual backgrounds */
+    position: relative;
+
+}
+
+/* Adjust the profile section padding */
+.profile {
+    padding-top: 2rem; /* Reduced from 6rem since we have container padding */
+}
+
+/* Profile Section */
+.profile {
+    padding: 6rem 2rem 2rem;
+    text-align: center;
+    background-color: var(--color-background);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.profile img {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 5px solid var(--color-primary);
+}
+
+.profile h1 {
+    color: var(--color-textb);
+    margin-bottom: 1rem;
+}
+
+/* Featured Works */
+.featured-works {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.featured-works h2 {
+    color: var(--color-textb);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.works-grid {
+    /* TASK: Add grid layout and gap */
+    
+    padding: 2rem 0;
+    width: 100%;
+    max-width: 1400px;  /* Add a max-width for larger screens */
+    margin: 0 auto;
+}
+
+.work-item {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s ease;
+    width: 100%;
+    border-radius:15px
+}
+
+.work-item:hover {
+    transform: translateY(-5px);
+    background-color: var(--color-secondary); /* Light version of --color-secondary */
+    cursor: pointer;
+    
+}
+
+.work-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.work-item h3 {
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    font-family: 'fiorina'
+}
+
+.work-item p {
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        justify-content: center;
+    }
+
+    .profile {
+        padding: 4rem 1rem 1rem;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .navbar a {
+        padding: 0.5rem;
+    }
+
+    .header-content {
+        padding: 0 1rem;
+    }
+
+    .profile img {
+        width: 150px;
+    }
+} 
